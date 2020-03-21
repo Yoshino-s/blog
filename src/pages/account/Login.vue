@@ -22,7 +22,9 @@
             />
 
             <div>
-              <router-link to="/account/register">注册</router-link>
+              <div class="reg-options">
+                <router-link to="/account/register">注册...</router-link>
+              </div>
               <q-btn
                 label="提交"
                 type="submit"
@@ -67,4 +69,7 @@ export default class Index extends Vue {
     height: 140px
   .more-margin
     margin: 0 30px
+  .reg-options
+    margin: 0 10px 10px
+    text-align: right
 </style>

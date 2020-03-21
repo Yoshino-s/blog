@@ -8,7 +8,7 @@
               <q-file v-model="model" label="Select your markdown." @input="change" name="md_file" />
             </q-card-section>
             <q-card-section>
-              The Markdwon include follow pictures, which cannot be loaded:
+              The Markdown include follow pictures, which cannot be loaded:
               <ul>
                 <li v-for="(v, k) in imgs" :key="k">
                   {{v.reason}} Url: {{k}}

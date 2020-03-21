@@ -1,6 +1,6 @@
 <template>
   <div>
-    <q-list bordered ref="drawer">
+    <q-list bordered class="top-down-bordered" ref="drawer">
       <q-item>
         <q-item-section>分类们</q-item-section>
       </q-item>
@@ -12,7 +12,7 @@
         <q-item-section>{{cate.name}}</q-item-section>
       </q-item>
     </q-list>
-    <q-list bordered class="bottom">
+    <q-list bordered class="top-down-bordered bottom">
       <q-item clickable class="no-color" to="/account/login">
         <q-item-section avatar>
           <q-icon name="account_circle" />
@@ -52,4 +52,6 @@ export default class Drawer extends Vue {
   position: absolute
   bottom: 0
   width: 100%
+.top-down-bordered
+  border-style: solid none
 </style>

@@ -1,5 +1,8 @@
 <template>
-  <q-btn flat round :icon="icon" v-if="icon" @click="click"/>
+  <div>
+    <q-btn flat round :icon="icon" v-if="icon" @click="click"/>
+    <q-btn flat round  icon="home" v-if="icon" @click="backHome"/>
+  </div>
 </template>
 
 <script lang="ts">
@@ -19,11 +22,16 @@ export default class FuncBtn extends Vue {
     }
     return map[this.func];
   }
+
+  backHome() {
+    this.$router.push('/')
+  }
+
   click() {
     const actions = {
       theme: () => this.$q.dark.toggle(),
       back: () => this.$router.back(),
-      home: () => this.$router.push('/'),
+      home: this.backHome,
       menu: () => 0
     };
     actions[this.func]();
