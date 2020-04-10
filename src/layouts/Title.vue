@@ -1,13 +1,16 @@
 <template>
-  <q-layout view="HHh LpR LFF">
+  <q-layout view="HHh LpR Lff">
 
     <q-header elevated class="bg-primary text-white" height-hint="98">
       <q-toolbar>
         <q-btn class="drawer-btn" icon="menu" round flat @click="()=>left=!left"/>
         <q-toolbar-title>
-          {{ $route.meta.title }}
+          <router-link class="no-color" to="/">
+          {{ $route.meta.title || 'Yoshino-s Blog'}}
+          </router-link>
         </q-toolbar-title>
-        <FuncBtn :func="$route.meta.right"/>
+        
+        <FuncBtn :func="$route.meta.right || 'theme'"/>
       </q-toolbar>
     </q-header>
 
@@ -18,11 +21,7 @@
     <q-page-container>
       <router-view />
     </q-page-container>
-
-    <q-footer class="bg-grey-8 text-white" elevated>
-      <Footer/>
-    </q-footer>
-
+    <Footer/>
   </q-layout>
 </template>
 

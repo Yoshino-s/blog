@@ -8,7 +8,7 @@
   "author": "Yoshino-s <yoshino.prog@gmail.com>",
   "private": true,
   "scripts": {
-    "start": "quasar dev -m pwa",
+    "start:dev": "quasar dev -m pwa",
     "lint": "eslint --ext .js,.ts,.vue --ignore-path .gitignore ./",
     "test": "echo \"No test specified\" && exit 0"
   },

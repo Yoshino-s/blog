@@ -1,12 +1,13 @@
 a
-  &:not(.no-color)
+  &.color
     color: $primary
-  color: initial
+    transition: color linear .1s
+    &:hover
+      transition: color linear .3s
+      color: $accent
   text-decoration: none
-  transition: color linear .1s
-  &:hover
-    transition: color linear .3s
-    color: $accent
+  color: inherit
+  
 
 html, body, *
   transition: background-color .3s

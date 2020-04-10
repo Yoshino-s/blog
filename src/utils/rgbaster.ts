@@ -22,11 +22,6 @@ export const getImageData = (src: string, scale = 1): Promise<Uint8ClampedArray>
       const { data } = context.getImageData(0, 0, width, height)
       resolve(data)
     }
-
-    const errorHandler = () => reject(new Error('An error occurred attempting to load image'))
-
-    img.onerror = errorHandler
-    img.onabort = errorHandler
     img.src = src
   })
 }

@@ -3,7 +3,7 @@
     <q-card class="reg-card">
       <q-card-section class="more-margin">
         <keep-alive>
-          <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-md">
+          <q-form @submit="onSubmit" class="q-gutter-md">
             <q-input
               dense
               v-model="name"
@@ -20,9 +20,8 @@
               lazy-rules
               :rules="[ validator.notEmptyValidator ]"
             />
-
             <div>
-              <router-link to="/account/register">注册</router-link>
+              <router-link to="/user/register">注册</router-link>
               <q-btn
                 label="提交"
                 type="submit"
@@ -39,14 +38,37 @@
 <script lang="ts">
 import {Component, Vue} from 'vue-property-decorator';
 import { notEmptyValidator } from '../../utils/validator';
+import {login} from '../../query/user.query';
 
 @Component
 export default class Index extends Vue {
   validator = { notEmptyValidator};
 
-  onSubmit() {
-    //
+  async onSubmit() {
+    const res = await login(this.name, this.password);
+    if(res.jwt) {
+      this.$q.notify({
+        type: 'positive',
+        message: `Welcome ${this.name}.`,
+        timeout: 1000
+      });
+      localStorage.setItem('jwt', res.jwt);
+      this.$router.push('/');
+    } else {
+      this.$q.notify({
+        type: 'negative',
+        message: 'Login fail.',
+        timeout: 1000
+      });
+    }
   }
+
+  created() {
+    if(localStorage.getItem('jwt')) {
+      this.$router.replace('/user/profile');
+    }
+  }
+
   name = '';
   password = '';
 }
@@ -56,13 +78,6 @@ export default class Index extends Vue {
   position: relative
   width: calc(100vw - 40px)
   max-width: 400px
-  .overlay
-    height: 140px
-    width: 100%
-    transition: width ease-in .75s
-    background-color: rgba(0, 0, 0, .4)
-    position: absolute
-    top: 0
   .head
     height: 140px
   .more-margin

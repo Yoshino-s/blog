@@ -8,6 +8,7 @@
     "allowSyntheticDefaultImports": true,
     "module": "esnext",
     "moduleResolution": "node",
+    "resolveJsonModule": true,
     "baseUrl": ".",
     "types": [
       "quasar", "node"

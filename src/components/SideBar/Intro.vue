@@ -29,8 +29,8 @@ import zhihuB from '../../assets/logo/zhihu.black.svg';
 })
 export default class WidgetIntro extends Vue {
   badget = badget;
-  content = '比赛ID：Yoshino-s，来自华东师范大学，目前在华东师大<a>Metasequoia校队</a>以及<a>V&N联合战队</a>。\
-  主力Misc/Web，新手一枚。VS Code, Typescript忠实用户，前端切图手。';
+  content = '比赛ID：Yoshino-s，来自华东师范大学，目前在华东师大<a class="color">Metasequoia校队</a>以及<a class="color">V&N联合战队</a>。\
+  主要方向Misc/Web，新手一枚。VS Code, Typescript忠实用户，前端切图手。';
   get abouts() {
     return [
       ['img:'+(this.$q.dark.isActive?githubW:githubB), 'https://www.github.com/yoshino-s/'],

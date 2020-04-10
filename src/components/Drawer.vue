@@ -13,11 +13,17 @@
       </q-item>
     </q-list>
     <q-list bordered class="bottom">
-      <q-item clickable class="no-color" to="/account/login">
+      <q-item clickable class="no-color" to="/content/create">
+        <q-item-section avatar>
+          <q-icon name="cloud_upload" />
+        </q-item-section>
+        <q-item-section>Upload</q-item-section>
+      </q-item>
+      <q-item clickable class="no-color" to="/user/profile">
         <q-item-section avatar>
           <q-icon name="account_circle" />
         </q-item-section>
-        <q-item-section>Login</q-item-section>
+        <q-item-section>User</q-item-section>
       </q-item>
       <q-item clickable class="no-color" to="/about">
         <q-item-section avatar>
