@@ -15,7 +15,7 @@
   "dependencies": {
     "@quasar/extras": "^1.5.2",
     "@types/highlight.js": "^9.12.3",
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "babel-plugin-prismjs": "^2.0.1",
     "dayjs": "^1.8.23",
     "markdown-it": "^10.0.0",
